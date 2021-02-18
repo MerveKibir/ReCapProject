@@ -12,8 +12,8 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            CarTest();
-            //BrandTest();
+            //CarTest();
+            BrandTest();
         }
             private static void BrandTest()
             {
