@@ -20,7 +20,7 @@ namespace Business.Concrete
 
         public IResult AddedCar(Car car)
         {
-            if (car.Description.Length < 2 && car.DailyPrice < 0)
+            if (car.Descriptions.Length < 2 && car.DailyPrice < 0)
             {
                 return new ErrorResult (Messages.CarNameAndDailyPriceInvalid);
             }

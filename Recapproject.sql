@@ -48,5 +48,31 @@ VALUES
 	('Hyundai'),
 	('Renault')
 
+	CREATE TABLE Users
+(
+	Id INT NOT NULL PRIMARY KEY, 
+    FirstName NVARCHAR(20) NULL, 
+    LastName NVARCHAR(20) NULL, 
+    Email NVARCHAR(50) NULL, 
+    [Password] NVARCHAR(12) NOT NULL
+)
 
+CREATE TABLE Customers
+(
+	Id INT NOT NULL PRIMARY KEY, 
+    UserId INT NOT NULL ,
+    CompanyName NVARCHAR(50) NULL,
+	CONSTRAINT userFK FOREIGN KEY (UserId) REFERENCES Users(Id)
+)
+
+CREATE TABLE Rentals
+(
+    Id INT NOT NULL PRIMARY KEY,
+    CarId INT NOT NULL,
+    CustomerId INT NOT NULL,
+    RentDate DateTime NOT NULL,
+    ReturnDate DateTime NULL
+    CONSTRAINT customer_FK FOREIGN KEY (CustomerId) REFERENCES Customers(Id),
+    CONSTRAINT car_FK FOREIGN KEY (CarId) REFERENCES Car(CarId)
+)
 

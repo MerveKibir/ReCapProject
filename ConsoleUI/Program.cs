@@ -32,7 +32,7 @@ namespace ConsoleUI
             UserManager userManager = new UserManager(new EfUserDal());
             userManager.Add(new Users
             {
-                UserId = 1,
+                Id = 1,
                 FirstName = "Ayşe",
                 LastName = "Çınar",
                 Email = "ayse@hotmail.com",
